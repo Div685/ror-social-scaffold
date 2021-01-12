@@ -1,5 +1,21 @@
 <section class="user-section">
-  <h2><%= "Name: #{@user.name}" %></h2>
+  <div class="d-flex users-section-name">
+  
+    <h2><%= "Name: #{@user.name}" %></h2>
+    
+    <div>  
+      <% if @user != current_user %>
+        <% if sent_requests(@user.id)  %>
+          <span>Pending</span>
+        <% else %>
+          <span class="profile-link">
+            <%= link_to 'Send Friend Request',  user_invite_path(@user), method: :post, class: 'btn-request invite-link' %>
+          </span>
+        <% end %>
+      <% end  %>
+    </div>
+  
+  </div>
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">
@@ -7,3 +23,14 @@
     </ul>
   </article>
 </section>
+
+<% if @user == current_user %>
+  <h2>Invitations</h2>
+  <% pending_invitations.each do |requestee| %>
+    <div class="invitation">
+      <p class="flex-item"><%= requestee.name %> wants to be your friend</p>
+      <%= link_to 'accept', user_accept_path(requestee), method: :post, class: 'invite-btn' %>
+      <%= link_to 'reject', user_reject_path(requestee), method: :post, class: 'invite-btn' %>
+    </div>
+  <% end %>
+<% end %>

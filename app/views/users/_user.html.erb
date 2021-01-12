@@ -1,6 +1,25 @@
+<div class="users-section-name">
+
 <li>
   Name: <%= user.name %>
   <span class="profile-link">
     <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+
+    <% if sent_requests(user.id) %>
+      <% if pending_requests(user.id) %>
+        <span>Friend</span>
+      <% else %>
+        <span>Pending</span>
+        <% unless current_user_requests(user.id) %>
+          <%= link_to 'Accept', user_accept_path(user), method: :post, class: "" %>
+          <%= link_to 'Reject', user_reject_path(user), method: :post, class: "" %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <%= link_to "Send Request", user_invite_path(user), method: :post,  class: "" %>
+    <% end %>
+
   </span>
 </li>
+
+</div>
