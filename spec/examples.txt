@@ -5,10 +5,10 @@ example_id                                            | status | run_time       
 ./spec/controllers/post_controller_spec.rb[1:1:1]     | passed | 8.73 seconds    |
 ./spec/controllers/sessions_controller_spec.rb[1:1:1] | passed | 6.74 seconds    |
 ./spec/controllers/sessions_controller_spec.rb[1:2:1] | passed | 1.03 seconds    |
-./spec/models/comment_spec.rb[1:1:1]                  | passed | 0.11586 seconds |
-./spec/models/comment_spec.rb[1:1:2]                  | passed | 0.00702 seconds |
-./spec/models/comment_spec.rb[1:2:1]                  | passed | 0.01013 seconds |
-./spec/models/comment_spec.rb[1:2:2]                  | passed | 0.01152 seconds |
+./spec/models/comment_spec.rb[1:1:1]                  | passed | 0.00961 seconds |
+./spec/models/comment_spec.rb[1:1:2]                  | passed | 0.00715 seconds |
+./spec/models/comment_spec.rb[1:2:1]                  | passed | 0.15259 seconds |
+./spec/models/comment_spec.rb[1:2:2]                  | passed | 0.008 seconds   |
 ./spec/models/friendship_spec.rb[1:1:1]               | passed | 0.00634 seconds |
 ./spec/models/friendship_spec.rb[1:1:2]               | passed | 0.06819 seconds |
 ./spec/models/like_spec.rb[1:1:1]                     | passed | 0.00968 seconds |

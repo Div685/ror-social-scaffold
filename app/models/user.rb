@@ -16,5 +16,4 @@ class User < ApplicationRecord
   def self.check_request(current_user, friend_id)
     current_user.friendships.exists?(friend_id: friend_id)
   end
-
 end

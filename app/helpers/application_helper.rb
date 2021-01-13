@@ -17,7 +17,8 @@ module ApplicationHelper
   end
 
   def sent_requests(id)
-    Friendship.exists?(user_id: current_user.id, friend_id: id) || Friendship.exists?(user_id: id, friend_id: current_user.id)
+    Friendship.exists?(user_id: current_user.id,
+                       friend_id: id) || Friendship.exists?(user_id: id, friend_id: current_user.id)
   end
 
   def current_user_requests(id)
@@ -25,7 +26,7 @@ module ApplicationHelper
   end
 
   def pending_requests(id)
-    request  = Friendship.find_by(user_id: current_user.id, friend_id: id)
+    request = Friendship.find_by(user_id: current_user.id, friend_id: id)
     request_two = Friendship.find_by(user_id: id, friend_id: current_user.id)
 
     request.nil? ? request_two.status : request.status
@@ -34,5 +35,4 @@ module ApplicationHelper
   def pending_invitations
     Friendship.where(friend_id: current_user.id).map { |friend| friend.user unless friend.status }.compact
   end
-
 end

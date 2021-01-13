@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   subject do
-      described_class.new(name: '')
+    described_class.new(name: '')
   end
   describe 'Associations' do
     it { should have_many(:posts) }
@@ -21,13 +21,13 @@ RSpec.describe User, type: :model do
     context 'when length of name is greater than 20' do
       it { should validate_length_of(:name).is_at_most(20) }
     end
-    
+
     context 'when email is nil' do
       it { should validate_presence_of(:email) }
     end
 
     context 'when password is nil' do
-        it { should validate_presence_of(:password) }
+      it { should validate_presence_of(:password) }
     end
   end
 end
