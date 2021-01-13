@@ -24,13 +24,15 @@
   </article>
 </section>
 
-<% if @user == current_user %>
-  <h2>Invitations</h2>
-  <% pending_invitations.each do |requestee| %>
-    <div class="invitation">
-      <p class="flex-item"><%= requestee.name %> wants to be your friend</p>
-      <%= link_to 'accept', user_accept_path(requestee), method: :post, class: 'invite-btn' %>
-      <%= link_to 'reject', user_reject_path(requestee), method: :post, class: 'invite-btn' %>
-    </div>
+<section class="section-invitation">
+  <% if @user == current_user %>
+    <h2>Invitations</h2>
+    <% pending_invitations.each do |requestee| %>
+      <div class="invitation">
+        <p class="invitation-name"> <span> <%= requestee.name %> </span> wants to be your friend</p>
+        <%= link_to 'accept', user_accept_path(requestee), method: :post, class: 'accept-btn' %>
+        <%= link_to 'reject', user_reject_path(requestee), method: :post, class: 'reject-btn' %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</section>
