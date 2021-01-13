@@ -2,10 +2,6 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :feature do
     before :each do
-        # User.create(name: 'Divyesh', email: 'div@gmail.com', password: '123456', password_confirmation: '123456')
-        # User.create(name: 'John', email: 'john@gmail.com', password: '123456', password_confirmation: '123456')
-        # sign_up_user('Divyesh', 'div@gmail.com', '123123123', '123123123')
-        # sign_up_user('John', 'john@gmail.com', '123123123', '123123123')
         visit root_path   
     end
 

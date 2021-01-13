@@ -1,5 +1,6 @@
 example_id                                            | status | run_time        |
 ----------------------------------------------------- | ------ | --------------- |
+./spec/controllers/post_controller_spec.rb[1:1:1]     | passed | 8.73 seconds    |
 ./spec/controllers/sessions_controller_spec.rb[1:1:1] | passed | 6.74 seconds    |
 ./spec/controllers/sessions_controller_spec.rb[1:2:1] | passed | 1.03 seconds    |
 ./spec/models/comment_spec.rb[1:1:1]                  | passed | 0.11586 seconds |
