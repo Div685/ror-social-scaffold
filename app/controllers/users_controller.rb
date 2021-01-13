@@ -14,9 +14,9 @@ class UsersController < ApplicationController
     invitation = current_user.friendships.build(friend_id: params[:user_id])
     if User.check_request(current_user, params[:user_id])
       flash.notice = 'You already have pending Invitations'
-      redirect_to user_path
+      redirect_to users_path
     elsif invitation.save
-      redirect_to user_path, notice: 'Your request has been sent!'
+      redirect_to users_path, notice: 'Your request has been sent!'
     end
   end
 
