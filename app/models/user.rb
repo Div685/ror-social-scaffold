@@ -12,6 +12,7 @@ class User < ApplicationRecord
 
   has_many :friendships, -> { where status: false }
   has_many :friends, -> { where status: true }, class_name: 'Friendship', foreign_key: 'friend_id'
+  has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
 
   def self.check_request(current_user, friend_id)
     current_user.friendships.exists?(friend_id: friend_id)

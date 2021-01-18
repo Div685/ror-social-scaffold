@@ -1,8 +1,8 @@
 example_id                                            | status | run_time        |
 ----------------------------------------------------- | ------ | --------------- |
-./spec/controllers/comment_controller_spec.rb[1:1:1]  | passed | 10.43 seconds   |
+./spec/controllers/comment_controller_spec.rb[1:1:1]  | passed | 33.53 seconds   |
 ./spec/controllers/like_controller_spec.rb[1:1:1]     | passed | 10.45 seconds   |
-./spec/controllers/post_controller_spec.rb[1:1:1]     | passed | 8.73 seconds    |
+./spec/controllers/post_controller_spec.rb[1:1:1]     | passed | 10.99 seconds   |
 ./spec/controllers/sessions_controller_spec.rb[1:1:1] | passed | 6.74 seconds    |
 ./spec/controllers/sessions_controller_spec.rb[1:2:1] | passed | 1.03 seconds    |
 ./spec/models/comment_spec.rb[1:1:1]                  | passed | 0.00961 seconds |
@@ -28,5 +28,5 @@ example_id                                            | status | run_time       
 ./spec/models/user_spec.rb[1:2:2:1]                   | passed | 0.01091 seconds |
 ./spec/models/user_spec.rb[1:2:3:1]                   | passed | 0.01731 seconds |
 ./spec/models/user_spec.rb[1:2:4:1]                   | passed | 0.02021 seconds |
-./spec/requests/users_request_spec.rb[1:1]            | passed | 12.73 seconds   |
-./spec/requests/users_request_spec.rb[1:2]            | passed | 1.68 seconds    |
+./spec/requests/users_request_spec.rb[1:1]            | passed | 14.96 seconds   |
+./spec/requests/users_request_spec.rb[1:2]            | passed | 2.01 seconds    |
