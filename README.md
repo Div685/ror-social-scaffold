@@ -60,8 +60,11 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rpsec --format documentation
+    rspec --order defined --format documentation
 ```
+- Please Add `--order defined` flag if you runnig all the tests at once.
+- you can also run test individually by specifying `file name`
+e.g ` rspec spec/models/like_spec.rb ` 
 
 > Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
 

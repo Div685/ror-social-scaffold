@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.current_user_name {
+  margin-right: 1rem;
+}

@@ -56,7 +56,8 @@ group :test do
   gem 'rspec'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'shoulda', '~> 3.5'
+  # gem 'shoulda', '~> 3.5'
+  gem 'shoulda-matchers', '~> 4.0'
   gem 'webdrivers'
 end
 
