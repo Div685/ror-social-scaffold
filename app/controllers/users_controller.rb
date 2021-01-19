@@ -24,7 +24,14 @@ class UsersController < ApplicationController
     request = Friendship.find_by(user_id: params[:user_id], friend_id: current_user.id)
 
     request.status = true  
-    request.save
+    if request.save
+      flash.notice = 'Friend Request Accepted!'
+      friendship2 = current_user.friendships.build(friend_id: params[:user_id], status: true)
+
+      friendship2.save
+    else
+      flash.notice = 'Friend Request could not be Accepted!'
+    end
 
     redirect_to user_path(current_user), notice: 'Request Accepted Successfully'
   end
