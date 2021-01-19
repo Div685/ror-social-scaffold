@@ -24,6 +24,8 @@
   </article>
 </section>
 
+<div class="invite-friends">
+
 <section class="section-invitation">
   <% if @user == current_user %>
     <h2>Invitations</h2>
@@ -36,3 +38,15 @@
     <% end %>
   <% end %>
 </section>
+
+<section class="section-invitation">
+  <% if @user == current_user %>
+    <h2>My Friends</h2>
+    <% @friends_lists.each do |frnd| %>
+      <div class="invitation">
+        <p class="invitation-name"> <span> <%= frnd.user.name %> </span> is your friend</p>
+      </div>
+    <% end %>
+  <% end %>
+</section>
+</div>
