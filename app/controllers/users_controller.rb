@@ -22,8 +22,10 @@ class UsersController < ApplicationController
 
   def accept
     request = Friendship.find_by(user_id: params[:user_id], friend_id: current_user.id)
-    request.status = true
+
+    request.status = true  
     request.save
+
     redirect_to user_path(current_user), notice: 'Request Accepted Successfully'
   end
 
