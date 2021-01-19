@@ -23,7 +23,6 @@ module ApplicationHelper
 
   def current_user_requests(id)
     current_user.friendships.exists?(friend_id: id)
-    # Friendship.exists?(user_id: current_user.id, friend_id: id)
   end
 
   def pending_requests(id)

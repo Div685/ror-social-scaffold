@@ -7,13 +7,16 @@
 
     <% if sent_requests(user.id) %>
       <% if pending_requests(user.id) %>
-        <span>Friend</span>
-      <% else %>
-        <span class="pending">Pending</span>
+        <span>pending</span>
+        
         <% unless current_user_requests(user.id) %>
           <%= link_to 'Accept', user_accept_path(user), method: :post, class: "accept-btn" %>
           <%= link_to 'Reject', user_reject_path(user), method: :post, class: "reject-btn" %>
         <% end %>
+
+      <% else %>
+        <span>Friend</span>
+        
       <% end %>
     <% else %>
       <%= link_to "Send Request", user_invite_path(user), method: :post,  class: "send-btn" %>
