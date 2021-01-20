@@ -4,15 +4,7 @@
     <h2><%= "Name: #{@user.name}" %></h2>
     
     <div>  
-      <% if @user != current_user %>
-        <% if sent_requests(@user.id)  %>
-          <span>Pending</span>
-        <% else %>
-          <span class="profile-link">
-            <%= link_to 'Send Friend Request',  user_invite_path(@user), method: :post, class: 'btn-request invite-link' %>
-          </span>
-        <% end %>
-      <% end  %>
+      <%= not_current_user(@user.id, @user) %> 
     </div>
   
   </div>
@@ -27,26 +19,13 @@
 <div class="invite-friends">
 
 <section class="section-invitation">
-  <% if @user == current_user %>
-    <h2>Invitations</h2>
-    <% pending_invitations.each do |requestee| %>
-      <div class="invitation">
-        <p class="invitation-name"> <span> <%= requestee.name %> </span> wants to be your friend</p>
-        <%= link_to 'accept', user_accept_path(requestee), method: :post, class: 'accept-btn' %>
-        <%= link_to 'reject', user_reject_path(requestee), method: :post, class: 'reject-btn' %>
-      </div>
-    <% end %>
-  <% end %>
+  <h2>Invitations</h2>
+  <%= my_invite(@user) %>
 </section>
 
 <section class="section-invitation">
-  <% if @user == current_user %>
-    <h2>My Friends</h2>
-    <% @friends_lists.each do |frnd| %>
-      <div class="invitation">
-        <p class="invitation-name"> <span> <%= frnd.user.name %> </span> is your friend</p>
-      </div>
-    <% end %>
-  <% end %>
+  <h2>My Friends</h2>
+  <%= my_friends(@user, @friends_lists) %>
+
 </section>
 </div>
