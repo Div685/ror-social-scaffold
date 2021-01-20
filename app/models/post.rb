@@ -11,7 +11,7 @@ class Post < ApplicationRecord
   def self.friends_and_own_posts(user)
     friends_posts = user.friends.pluck(:user_id)
     friends_posts << user.id
-    
+
     Post.where(user_id: friends_posts).order('posts.updated_at DESC')
   end
 end
