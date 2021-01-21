@@ -12,7 +12,8 @@ module UserHelper
         end
 
       else
-        content_tag :span, 'Friend'
+        content_tag(:span, 'Friend') +
+          link_to('Unfriend', user_unfriend_path(id), method: :delete, class: 'reject-btn')
       end
     else
       link_to('Send Request', user_invite_path(user), method: :post, class: 'send-btn')
@@ -26,7 +27,8 @@ module UserHelper
         list += content_tag :div, class: 'invitation' do
           content_tag :p, class: 'invitation-name' do
             content_tag(:span, "#{f.user.name} ", class: '') +
-              'is your friend'.html_safe
+              'is your friend'.html_safe +
+              link_to('Unfriend', user_unfriend_path(f.user.id), method: :delete, class: 'reject-btn')
           end
         end
       end
@@ -61,7 +63,8 @@ module UserHelper
         if pending_requests(id)
           content_tag :span, 'Pending'
         else
-          content_tag :span, 'Friend'
+          content_tag(:span, 'Friend') +
+            link_to('Unfriend', user_unfriend_path(id), method: :delete, class: 'reject-btn')
         end
       else
         content_tag(:span,

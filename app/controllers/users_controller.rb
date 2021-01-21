@@ -43,4 +43,19 @@ class UsersController < ApplicationController
 
     redirect_to users_path, notice: 'Request has been declined'
   end
+
+  def unfriend
+    request = Friendship.find_by(user_id: params[:user_id], friend_id: current_user.id)
+    request2 = Friendship.find_by(user_id: current_user.id, friend_id: params[:user_id])
+
+    if request.present? && request2.present?
+      request.destroy
+      request2.destroy
+      flash.notice = 'Successfully Unfriended'
+    else
+      flash.notice = 'Something went Wrong! Could not be unfriended!'
+    end
+
+    redirect_to users_path, notice: 'Request Successfully Unfriended!'
+  end
 end
