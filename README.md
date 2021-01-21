@@ -1,5 +1,7 @@
 # Scaffold for social media app with Ruby on Rails
 
+![screenshot](screencapture.png)
+
 > This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
 
 ## Built With
@@ -9,7 +11,7 @@
 
 ## Live Demo
 
-TBA
+Checkout the live demo at [Live](https://agile-sands-69934.herokuapp.com/)
 
 
 ## Getting Started
@@ -60,18 +62,27 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rpsec --format documentation
+    rspec --order defined --format documentation
 ```
+- Please Add `--order defined` flag if you runnig all the tests at once.
+- you can also run test individually by specifying `file name`
+e.g ` rspec spec/models/like_spec.rb ` 
 
 > Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
 
-### Deployment
-
-TBA
-
 ## Authors
 
-TBA
+👤 **Divyesh Patel**
+
+- GitHub: [@Div685](https://github.com/Div685)
+- Twitter: [@div_685](https://twitter.com/div_685)
+- LinkedIn: [Divyesh Patel](https://www.linkedin.com/in/divyesh-daxa-patel)
+
+👤 **Shonibare Adewunmi**
+
+- GitHub: [@Adewunmi97](https://github.com/Adewunmi97)
+- Twitter: [@ShonibareC](https://twitter.com/ShonibareC)
+- LinkedIn: [Adewunmi Shonibare](https://www.linkedin.com/in/adewunmi-shonibare-a2a7b0200/)
 
 ## 🤝 Contributing
 
@@ -85,9 +96,5 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
-
-## 📝 License
-
-TBA
-
+- [Ruby-doc](https://ruby-doc.org/core-2.6.5)
+- [Rails-doc](https://guides.rubyonrails.org/)

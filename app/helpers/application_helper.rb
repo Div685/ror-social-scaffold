@@ -15,4 +15,23 @@ module ApplicationHelper
       link_to('Like!', post_likes_path(post_id: post.id), method: :post)
     end
   end
+
+  def sent_requests(id)
+    Friendship.exists?(user_id: current_user.id,
+                       friend_id: id) || Friendship.exists?(user_id: id, friend_id: current_user.id)
+  end
+
+  def current_user_requests(id)
+    current_user.friendships.exists?(friend_id: id)
+  end
+
+  def pending_requests(id)
+    request = current_user.friends.find_by(user_id: id)
+
+    request.nil? ? true : false
+  end
+
+  def pending_invitations
+    Friendship.where(friend_id: current_user.id).map { |friend| friend.user unless friend.status }.compact
+  end
 end
