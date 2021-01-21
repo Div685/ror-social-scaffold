@@ -22,14 +22,13 @@ module ApplicationHelper
   end
 
   def current_user_requests(id)
-    Friendship.exists?(user_id: current_user.id, friend_id: id)
+    current_user.friendships.exists?(friend_id: id)
   end
 
   def pending_requests(id)
-    request = Friendship.find_by(user_id: current_user.id, friend_id: id)
-    request_two = Friendship.find_by(user_id: id, friend_id: current_user.id)
+    request = current_user.friends.find_by(user_id: id)
 
-    request.nil? ? request_two.status : request.status
+    request.nil? ? true : false
   end
 
   def pending_invitations
